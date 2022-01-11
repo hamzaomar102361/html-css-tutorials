@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #333;
+}
+.spinner {
+    margin: 100px auto;
+    position: relative;
+}
+.circle {
+    position: absolute;
+    margin: 30px;
+    border: 5px solid;
+    border-color: transparent transparent white;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+}
+.circle.one {
+    width: 100px;
+    height: 100px;
+    left: 100px;
+    top: 100px;
+    animation-duration: 0.75s;
+}
+.circle.two {
+    width: 125px;
+    height: 125px;
+    left: 88px;
+    top: 88px;
+    animation-duration: 1s;
+}
+.circle.three {
+    width: 150px;
+    height: 150px;
+    left: 75px;
+    top: 75px;
+    animation-duration: 1.25s;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.spin {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    margin: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.spin .c {
+    width: 150px;
+    height: 150px;
+    border: 10px solid;
+    border-color: transparent red;
+    background-color: #ddd;
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+}
