@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #333;
+}
+.image {
+    width: 870px;
+    height: 580px;
+    margin: 30px auto;
+    color: white;
+    position: relative;
+}
+.image::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: rgb(255 255 255 / 0.2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+    transition-delay: 0.2s;
+}
+.image:hover::before {
+    width: 100%;
+    height: 100%;
+}
+.image::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s;
+}
+.image:hover::after {
+    content: "Product Title";
+    font-size: 50px;
+}
+.image span {
+    position: absolute;
+    background-color: blue;
+    transition: 0.3s;
+}
+.image .one {
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 0;
+}
+.image .two {
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+}
+.image .three {
+    right: 0;
+    bottom: 0;
+    width: 3px;
+    height: 0;
+}
+.image .four {
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 3px;
+}
+.image:hover .one ,
+.image:hover .three {
+    height: 100%;
+}
+.image:hover .two,
+.image:hover .four {
+    width: 100%;
+}
