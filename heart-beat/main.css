@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #333;
+}
+.parent {
+    width: auto;
+    height:auto ; 
+}
+.my-love {
+    position: absolute;
+    color: white;
+    transform: rotate(-45deg) translatex(-40%);
+}
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heart {
+    position: relative;
+    width: 100px;
+    height: 160px;
+    background-color: darkred;
+    border-radius: 200px 200px 0 0;
+    transform: rotate(45deg);
+}
+.heart::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 160px;
+    background-color: darkred;
+    transform: rotate(-90deg);
+    border-radius: 200px 200px 0 0 ;
+    left: -30px;
+    top: 30px;
+}
+.heart:hover {
+    animation: heart-beat 1s linear infinite;
+}
+.button {
+    margin: 100px;
+    text-align: center;
+}
+.button a {
+    text-decoration: none;
+    color: white;
+    background-color: #2196f3;
+    padding: 10px 15px;
+    transition: 0.6s;
+    position: relative;
+}
+.button:hover a {
+    opacity: 0.8;
+}
+.button a::before,
+.button a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: white;
+    transition: 0.6s;
+}
+.button a::before {
+    top: -3px;
+    left: 0;
+}
+.button a::after {
+    bottom: -3px;
+    right: 0;
+}
+.button a:hover::before,
+.button a:hover::after {
+    width: 100%;
+}
+@keyframes heart-beat {
+    0% {
+        transform: rotate(45deg) scale(1);
+    }
+    50% {
+        transform: rotate(45deg) scale(0.8);
+    }
+    100% {
+        transform: rotate(45deg) scale(1);
+    }
+}
