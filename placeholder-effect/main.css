@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Tahoma,Arial;
+}
+:focus {
+    outline: none;
+}
+
+form .custom-input {
+    width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    position: relative;
+}
+form .custom-input label {
+    position: absolute;
+    left: 30px;
+    top: 25px;
+    color: #999;
+    font-size: 16px;
+    z-index: -1;
+    transition: 0.6s;
+}
+form .custom-input input[type="text"] {
+    height: 30px;
+    padding: 5px 10px;
+    background: transparent;
+    border: 1px solid #dfdfdf;
+}
+form .custom-input input[type="text"]:focus + label  {
+    left: 20px;
+    top: 0;
+    font-size: 12px;
+    color: #009688;
+    transition: 0.6s;
+}
+.hide {
+    width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+}
+.hide input[type="text"] {
+    height: 30px;
+    padding: 5px 10px;
+    border: 1px solid #dfdfdf;
+}
+.hide input[type="text"]::placeholder {
+    color: #999;
+    transition: 0.6s;
+}
+.hide input[type="text"]:focus::placeholder {
+    opacity: 0;
+}
