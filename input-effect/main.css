@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Tahoma,Arial;
+}
+:focus {
+    outline: none;
+}
+form {
+    width: 400px;
+    margin: 30px auto;
+}
+form input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+form .left-to-right {
+    position: relative;
+}
+form input + .border {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #c23616;
+    width: 0;
+    height: 2px;
+    transition: 0.6s;
+} 
+form input::placeholder {
+    transition: 0.6s;
+}
+form input:focus::placeholder {
+    opacity: 0;
+}
+form input:focus + .border {
+    width: 100%;
+}
+form .middle {
+    position: relative;
+}
+form .mid + .border {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    background-color: #c23616;
+    width: 0;
+    height: 2px;
+    transition: 0.6s;
+}
+form .mid:focus + .border {
+    left: 0;
+    width: 100%;
+}
+
+
